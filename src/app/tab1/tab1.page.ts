@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Category, CategoryService,} from '../services/categories/categories.service';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
