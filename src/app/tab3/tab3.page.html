@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Favorite quotes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding ">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Favorite Quotes</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-card *ngFor="let quote of favoriteQuotes">
+      <ion-card-title>
+        <ion-row class="ion-justify-content-center">
+          <ion-col>
+            {{quote.author}}
+          </ion-col>
+          <ion-col class="ion-text-end">
+            <ion-button (click)="removeFavorite(quote)">
+              <ion-icon name="star"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-title>
+      <ion-card-header>category: {{quote.category}}</ion-card-header>
+      <ion-card-content>"{{quote.quote}}"</ion-card-content>
+    </ion-card>
+
 </ion-content>
